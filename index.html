@@ -1,11 +1,379 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MediaVault - Galeri Film & Musik</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <header>
+            <h1>🎬 MediaVault 🎵</h1>
+            <p class="subtitle">Koleksi Film & Musik Terbaik</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">48</div>
+                <div>Total Film</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">124</div>
+                <div>Total Lagu</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4.2</div>
+                <div>Rating Rata-rata</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">15</div>
+                <div>Genre</div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('movies')">🎬 Film</button>
+            <button class="tab-button" onclick="showTab('music')">🎵 Musik</button>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-button active" onclick="filterGenre('all')">Semua</button>
+            <button class="filter-button" onclick="filterGenre('action')">Action</button>
+            <button class="filter-button" onclick="filterGenre('drama')">Drama</button>
+            <button class="filter-button" onclick="filterGenre('comedy')">Comedy</button>
+            <button class="filter-button" onclick="filterGenre('horror')">Horror</button>
+            <button class="filter-button" onclick="filterGenre('pop')">Pop</button>
+            <button class="filter-button" onclick="filterGenre('rock')">Rock</button>
+            <button class="filter-button" onclick="filterGenre('jazz')">Jazz</button>
+        </div>
+
+        <div id="movies" class="tab-content active">
+            <div class="gallery">
+                <div class="media-card" data-genre="action">
+                    <div class="media-poster">🎬</div>
+                    <div class="media-info">
+                        <h3 class="media-title">Avengers: Endgame</h3>
+                        <p class="media-artist">Sutradara: Russo Brothers</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Action</span>
+                            <span class="genre-tag">Sci-Fi</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-score">4.8/5</span>
+                        </div>
+                        <div class="media-year">2019</div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-genre="drama">
+                    <div class="media-poster">🎭</div>
+                    <div class="media-info">
+                        <h3 class="media-title">Parasite</h3>
+                        <p class="media-artist">Sutradara: Bong Joon-ho</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Drama</span>
+                            <span class="genre-tag">Thriller</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-score">4.9/5</span>
+                        </div>
+                        <div class="media-year">2019</div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-genre="comedy">
+                    <div class="media-poster">😂</div>
+                    <div class="media-info">
+                        <h3 class="media-title">Knives Out</h3>
+                        <p class="media-artist">Sutradara: Rian Johnson</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Comedy</span>
+                            <span class="genre-tag">Mystery</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="rating-score">4.3/5</span>
+                        </div>
+                        <div class="media-year">2019</div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-genre="horror">
+                    <div class="media-poster">👻</div>
+                    <div class="media-info">
+                        <h3 class="media-title">Hereditary</h3>
+                        <p class="media-artist">Sutradara: Ari Aster</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Horror</span>
+                            <span class="genre-tag">Drama</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="rating-score">4.1/5</span>
+                        </div>
+                        <div class="media-year">2018</div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-genre="action">
+                    <div class="media-poster">🚗</div>
+                    <div class="media-info">
+                        <h3 class="media-title">Mad Max: Fury Road</h3>
+                        <p class="media-artist">Sutradara: George Miller</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Action</span>
+                            <span class="genre-tag">Adventure</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-score">4.6/5</span>
+                        </div>
+                        <div class="media-year">2015</div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-genre="drama">
+                    <div class="media-poster">🌊</div>
+                    <div class="media-info">
+                        <h3 class="media-title">The Shape of Water</h3>
+                        <p class="media-artist">Sutradara: Guillermo del Toro</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Drama</span>
+                            <span class="genre-tag">Fantasy</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="rating-score">4.2/5</span>
+                        </div>
+                        <div class="media-year">2017</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="music" class="tab-content">
+            <div class="gallery">
+                <div class="media-card" data-genre="pop">
+                    <div class="media-poster music">🎤</div>
+                    <div class="media-info">
+                        <h3 class="media-title">Blinding Lights</h3>
+                        <p class="media-artist">The Weeknd</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Pop</span>
+                            <span class="genre-tag">Synthpop</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-score">4.7/5</span>
+                        </div>
+                        <div class="media-year">2019</div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-genre="rock">
+                    <div class="media-poster music">🎸</div>
+                    <div class="media-info">
+                        <h3 class="media-title">Bohemian Rhapsody</h3>
+                        <p class="media-artist">Queen</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Rock</span>
+                            <span class="genre-tag">Progressive</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-score">4.9/5</span>
+                        </div>
+                        <div class="media-year">1975</div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-genre="jazz">
+                    <div class="media-poster music">🎺</div>
+                    <div class="media-info">
+                        <h3 class="media-title">Take Five</h3>
+                        <p class="media-artist">Dave Brubeck Quartet</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Jazz</span>
+                            <span class="genre-tag">Cool Jazz</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-score">4.8/5</span>
+                        </div>
+                        <div class="media-year">1959</div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-genre="pop">
+                    <div class="media-poster music">💃</div>
+                    <div class="media-info">
+                        <h3 class="media-title">Bad Guy</h3>
+                        <p class="media-artist">Billie Eilish</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Pop</span>
+                            <span class="genre-tag">Alternative</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star empty">★</span>
+                            </div>
+                            <span class="rating-score">4.4/5</span>
+                        </div>
+                        <div class="media-year">2019</div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-genre="rock">
+                    <div class="media-poster music">⚡</div>
+                    <div class="media-info">
+                        <h3 class="media-title">Thunderstruck</h3>
+                        <p class="media-artist">AC/DC</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Rock</span>
+                            <span class="genre-tag">Hard Rock</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-score">4.6/5</span>
+                        </div>
+                        <div class="media-year">1990</div>
+                    </div>
+                </div>
+
+                <div class="media-card" data-genre="jazz">
+                    <div class="media-poster music">🎹</div>
+                    <div class="media-info">
+                        <h3 class="media-title">So What</h3>
+                        <p class="media-artist">Miles Davis</p>
+                        <div class="genre-tags">
+                            <span class="genre-tag">Jazz</span>
+                            <span class="genre-tag">Modal Jazz</span>
+                        </div>
+                        <div class="rating">
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <span class="rating-score">4.9/5</span>
+                        </div>
+                        <div class="media-year">1959</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => button.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        function filterGenre(genre) {
+            // Remove active class from all filter buttons
+            const filterButtons = document.querySelectorAll('.filter-button');
+            filterButtons.forEach(button => button.classList.remove('active'));
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Get all media cards
+            const mediaCards = document.querySelectorAll('.media-card');
+            
+            mediaCards.forEach(card => {
+                if (genre === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    const cardGenre = card.getAttribute('data-genre');
+                    if (cardGenre === genre) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 </html>
